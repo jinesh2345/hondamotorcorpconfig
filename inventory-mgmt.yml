@@ -1,0 +1,42 @@
+---
+server:
+  port: 8884
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    read:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/inventory_mgmt
+      username: root
+      password: Welcome@123
+    write:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/inventory_mgmt
+      username: root
+      password: Welcome@123
+contact-info:
+  contactNo: 9898989898
+  emailAddress: inventory@gmail.com
+---
+server:
+  port: 8886
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    read:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/sales_and_distribution_test
+      username: root
+      password: Welcome@123
+    write:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/sales_and_distribution_test
+      username: root
+      password: Welcome@123
+contact-info:
+  contactNo: 9898989898
+  emailAddress: inventory@gmail.com

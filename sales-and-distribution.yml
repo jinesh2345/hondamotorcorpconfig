@@ -1,0 +1,36 @@
+---
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sales_and_distribution_test
+    username: root
+    password: Welcome@123
+  config:
+    activate:
+      on-profile: dev
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    generate-ddl: true
+server:
+  port: 8885
+---
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sales_and_distribution_test
+    username: root
+    password: Welcome@123
+  config:
+    activate:
+      on-profile: test
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    generate-ddl: true
+server:
+  port: 8887
