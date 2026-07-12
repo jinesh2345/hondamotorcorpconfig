@@ -2,7 +2,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sales_and_distribution_test
+    url: jdbc:mysql://localhost:3306/sales_and_distribution
     username: root
     password: Welcome@123
   config:
@@ -21,7 +21,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: "http://localhost:7001/eureka,http://localhost:7002/eureka"
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
 ---
 spring:
   datasource:
@@ -45,4 +45,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: "http://localhost:7001/eureka,http://localhost:7002/eureka"
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka

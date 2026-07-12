@@ -24,7 +24,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: false
     service-url:
-           defaultZone: "http://localhost:7001/eureka,http://localhost:7002/eureka"
+           defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
 ---
 server:
   port: 8886
@@ -35,12 +35,12 @@ spring:
   datasource:
     read:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/sales_and_distribution_test
+      url: jdbc:mysql://localhost:3306/inventory_mgmt_test
       username: root
       password: Welcome@123
     write:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/sales_and_distribution_test
+      url: jdbc:mysql://localhost:3306/inventory_mgmt_test
       username: root
       password: Welcome@123
 contact-info:
@@ -51,4 +51,4 @@ eureka:
       register-with-eureka: true
       fetch-registry: false
       service-url:
-               defaultZone: "http://localhost:7001/eureka,http://localhost:7002/eureka"
+               defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
