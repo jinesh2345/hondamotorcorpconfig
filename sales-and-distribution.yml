@@ -16,6 +16,12 @@ spring:
     generate-ddl: true
 server:
   port: 8885
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: "http://localhost:7001/eureka,http://localhost:7002/eureka"
 ---
 spring:
   datasource:
@@ -34,3 +40,9 @@ spring:
     generate-ddl: true
 server:
   port: 8887
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: "http://localhost:7001/eureka,http://localhost:7002/eureka"

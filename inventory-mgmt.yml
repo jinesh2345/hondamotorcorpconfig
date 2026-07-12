@@ -19,6 +19,12 @@ spring:
 contact-info:
   contactNo: 9898989898
   emailAddress: inventory@gmail.com
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+           defaultZone: "http://localhost:7001/eureka,http://localhost:7002/eureka"
 ---
 server:
   port: 8886
@@ -40,3 +46,9 @@ spring:
 contact-info:
   contactNo: 9898989898
   emailAddress: inventory@gmail.com
+eureka:
+  client:
+      register-with-eureka: true
+      fetch-registry: false
+      service-url:
+               defaultZone: "http://localhost:7001/eureka,http://localhost:7002/eureka"
