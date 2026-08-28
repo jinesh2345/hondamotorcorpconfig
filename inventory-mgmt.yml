@@ -2,8 +2,6 @@
 server:
   port: 8885
 spring:
-  application:
-    name: inventory-mgmt
   config:
     activate:
       on-profile: dev
@@ -34,8 +32,6 @@ contact-info:
 server:
   port: 8887
 spring:
-  application:
-    name: inventory-mgmt
   config:
     activate:
       on-profile: test
