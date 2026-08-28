@@ -32,7 +32,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
 ...
 ---
 server:
@@ -68,5 +68,5 @@ eureka:
     register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
 ...
