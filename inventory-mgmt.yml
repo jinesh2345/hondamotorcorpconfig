@@ -1,6 +1,6 @@
 ---
 server:
-  port: 8885
+  port: 8882
 spring:
   config:
     activate:
@@ -17,26 +17,30 @@ spring:
       username: root
       password: Welcome@123
   jpa:
-    show_sql: true
+    show-sql: true
     generate-ddl: false
     properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: health,info
+    endpoint:
+      health:
+        show-details: always
+        enabled: true
+      info:
+        env:
+          enabled: true
   messages:
-    basename: errors
+    baseName: errors
 contact-info:
-  contactNo: 8888877777
-  emailAddress: inventory-dev@gmail.com
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: false
-    service-url:
-      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
-...
+  contactNo: 7777788888
+  emailAddress: dev@gmail.com
 ---
 server:
-  port: 8887
+  port: 8884
 spring:
   config:
     activate:
@@ -53,20 +57,26 @@ spring:
       username: root
       password: Welcome@123
   jpa:
-    show_sql: true
-    generate-ddl: true
+    show-sql: true
+    generate-ddl: false
     properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+  management:
+    endpoints:
+      web:
+        exposure:
+          include:
+            - health
+            - info
+    endpoint:
+      health:
+        enabled: true
+        show-details: true
+      info:
+        env:
+          enabled: true
   messages:
     basename: errors
 contact-info:
-  contactNo: 7777788888
-  emailAddress: inventory-test@gmail.com
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: false
-    service-url:
-      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
-...
+  contactNo: 8888899999
+  emailAddress: test@gmail.com

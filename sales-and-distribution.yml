@@ -1,9 +1,7 @@
 ---
 server:
-  port: 8884
+  port: 8883
 spring:
-  application:
-    name: sales-and-distribution
   config:
     activate:
       on-profile: dev
@@ -16,21 +14,26 @@ spring:
     show-sql: true
     generate-ddl: false
     properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: false
-    service-url:
-      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+  management:
+    endpoints:
+      web:
+        exposure:
+          include:
+            - health
+            - info
+    endpoint:
+      health:
+        enabled: true
+        show-details: always
+      info:
+        env:
+          enabled: true
 ...
 ---
 server:
-  port: 8886
+  port: 8885
 spring:
-  application:
-    name: sales-and-distribution
   config:
     activate:
       on-profile: test
@@ -43,12 +46,19 @@ spring:
     show-sql: true
     generate-ddl: false
     properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: false
-    service-url:
-      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+  management:
+    endpoints:
+      web:
+        exposure:
+          include:
+            - health
+            - info
+    endpoint:
+      health:
+        enabled: true
+        show-details: always
+      info:
+        env:
+          enabled: true
 ...
