@@ -1,0 +1,54 @@
+---
+server:
+  port: 8884
+spring:
+  application:
+    name: sales-and-distribution
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sales_and_distribution
+    username: root
+    password: Welcome@123
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+...
+---
+server:
+  port: 8886
+spring:
+  application:
+    name: sales-and-distribution
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sales_and_distribution_test
+    username: root
+    password: Welcome@123
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+...

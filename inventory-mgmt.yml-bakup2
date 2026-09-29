@@ -1,6 +1,6 @@
 ---
 server:
-  port: 8882
+  port: 8885
 spring:
   config:
     activate:
@@ -17,36 +17,26 @@ spring:
       username: root
       password: Welcome@123
   jpa:
-    show-sql: true
+    show_sql: true
     generate-ddl: false
     properties:
-      hibernate.dialect: org.hibernate.dialect.MySQLDialect
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: health,info
-    endpoint:
-      health:
-        show-details: always
-        enabled: true
-      info:
-        env:
-          enabled: true
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
   messages:
-    baseName: errors
+    basename: errors
 contact-info:
-  contactNo: 7777788888
-  emailAddress: dev@gmail.com
+  contactNo: 8888877777
+  emailAddress: inventory-dev@gmail.com
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: "http://localhost:9988/eureka,http://localhost:9999/eureka"
+      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+...
 ---
 server:
-  port: 8884
+  port: 8887
 spring:
   config:
     activate:
@@ -63,32 +53,20 @@ spring:
       username: root
       password: Welcome@123
   jpa:
-    show-sql: true
-    generate-ddl: false
+    show_sql: true
+    generate-ddl: true
     properties:
-      hibernate.dialect: org.hibernate.dialect.MySQLDialect
-  management:
-    endpoints:
-      web:
-        exposure:
-          include:
-            - health
-            - info
-    endpoint:
-      health:
-        enabled: true
-        show-details: true
-      info:
-        env:
-          enabled: true
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
   messages:
     basename: errors
 contact-info:
-  contactNo: 8888899999
-  emailAddress: test@gmail.com
+  contactNo: 7777788888
+  emailAddress: inventory-test@gmail.com
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: false
     service-url:
-      defaultZone: "http://localhost:9988/eureka,http://localhost:9999/eureka"
+      defaultZone: http://localhost:7001/eureka, http://localhost:7002/eureka
+...
